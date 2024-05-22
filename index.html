@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Project 2</title>
 </head>
 <body>
-    <h1>Resort Park Adventure</h1>
+    <div id="titleBG">
+        <h1>Resort Park Adventure</h1>
+    </div>
+    <nav id="navBar">
+
+    </nav>
+    <section id="part1">
+        <h1>Book a Lodge</h1>
+        <div id="bookingForm">
+            <h3 class="row">Please complete the following to make a Booking.</h2>
+            <form id="inputForm">
+                <label class="row" for="checkIn">Check In
+                <input type="datetime-local" name="checkIn" id="checkIn">
+                </label>
+                <label class="row" for="Check Out">Check Out
+                    <input type="datetime-local" name="checkOut" id="checkOut">
+                </label>
+                <label class="row" for="numberStaying">Number Staying
+                    <input 
+                    type="number" 
+                    name="numberStaying" 
+                    id="numberStaying"
+                    min="1"
+                    max="8"
+                    step="3600"
+                    >
+                </label>
+                <label class="row" for="lodgeNumber">Lodge Number
+                    <input 
+                    type="number" 
+                    name="lodgeNumber" 
+                    id="lodgeNumber"
+                    min="1"
+                    max="10"
+                    step="3600">
+                </label>
+                <p class="row" id="totalCost">Total Cost</p>
+                <button type="button" id="bookingSubmit">Make Booking</button>
+
+
+            </form>
+            <form id="summaryForm">
+
+            </form>
+
+        </div>
+
+        <div id="map">
+            <img src="/map.jpg">
+            <div id="lodge1">1</div>
+            <div id="lodge2">2</div> 
+            <div id="lodge3">3</div> 
+            <div id="lodge4">4</div> 
+            <div id="lodge5">5</div> 
+            <div id="lodge6">6</div> 
+            <div id="lodge7">7</div>
+            <div id="lodge8">8</div>  
+            <div id="lodge9">9</div> 
+            <div id="lodge10">10</div>  
+
+        </div>
+    </section>
+    
     
     
 </body>
