@@ -33,10 +33,10 @@ html {
 #inputForm .row{
     width: 100%;
     float: left;
-    padding: 8px 8px 2px 0px;
+    padding: 8px 8px 2px 4px;
 
 }
-#inputForm .row input[type="datetime-local"]{
+#inputForm .row input[type="date"]{
     float: right;
     width: 60%;
     
@@ -66,15 +66,6 @@ html {
 
 
 
-
-
-
-
-
-
-
-
-
 #map{
     float: left;
     width: 50%;
@@ -84,13 +75,13 @@ html {
     
     
 }
-#map img{
+#mapimg{
     object-fit: contain;
     position: absolute;
     width: 100%;
     height: 100%;
 }
-#map div{
+.icon{
     position: absolute;
     background-color: grey;
     text-align: center;
@@ -106,23 +97,23 @@ html {
 
 }
 
-#lodge1{
+#lodge1, #lodge1Details{
     left: 535px;
     top: 2px;
 }
-#lodge2{
+#lodge2, #lodge2Details{
     left: 535px;
     top: 54px;
 }
-#lodge3{
+#lodge3,#lodge3Details{
     left: 635px;
     top: 2px;
 }
-#lodge4{
+#lodge4,#lodge4Details{
     left: 635px;
     top: 54px;
 }
-#lodge5{
+#lodge5,#lodge5Details{
     left: 635px;
     top: 115px;
 }
@@ -130,14 +121,16 @@ html {
 #lodge6, #lodge7{
     width: 135px;
     height: 95px;
-    left: 290px;
+    
     line-height: 95px;
 }
-#lodge6{
+#lodge6,#lodge6Details{
     top: 200px;
+    left: 290px;
 }
-#lodge7{
+#lodge7,#lodge7Details{
     top: 320px;
+    left: 290px;
 }
 
 #lodge8, #lodge9{
@@ -145,11 +138,11 @@ html {
     height: 150px;  
     line-height: 150px;
 }
-#lodge8{
+#lodge8,#lodge8Details{
     left: 320px;
     top: 2px;
 }
-#lodge9{
+#lodge9,#lodge9Details{
     left: 470px;
     top: 440px;
 }
@@ -161,3 +154,36 @@ html {
     line-height: 200px;
     
 }
+#lodge10Details{
+    left: 470px;
+    top: 220px;
+}
+
+.lodgeDetails{
+    position: absolute;
+    background-color: white;
+    font-size: 20px;
+    color: black;
+    border:  ridge 4px black;
+    width: 300px;
+    height: 400px; 
+    visibility: hidden;
+    pointer-events: none;
+
+}
+
+.lodgeDetails img{
+    width: 250px;
+    height: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+   
+}
+
+.lodgeDetails .row{
+    width: 100%;
+    float: left;
+   
+    margin-left: 20px;
+}
+    

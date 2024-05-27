@@ -20,10 +20,10 @@
             <h3 class="row">Please complete the following to make a Booking.</h2>
             <form id="inputForm">
                 <label class="row" for="checkIn">Check In
-                <input type="datetime-local" name="checkIn" id="checkIn">
+                <input type="date" name="checkIn" id="checkIn">
                 </label>
-                <label class="row" for="Check Out">Check Out
-                    <input type="datetime-local" name="checkOut" id="checkOut">
+                <label class="row" for="checkOut">Check Out
+                    <input type="date" name="checkOut" id="checkOut">
                 </label>
                 <label class="row" for="numberStaying">Number Staying
                     <input 
@@ -31,19 +31,11 @@
                     name="numberStaying" 
                     id="numberStaying"
                     min="1"
-                    max="8"
-                    step="3600"
+                    max="8"      
                     >
                 </label>
-                <label class="row" for="lodgeNumber">Lodge Number
-                    <input 
-                    type="number" 
-                    name="lodgeNumber" 
-                    id="lodgeNumber"
-                    min="1"
-                    max="10"
-                    step="3600">
-                </label>
+                <div class="row" id="lodgeNumber">Lodge Number
+                 </div>
                 <p class="row" id="totalCost">Total Cost</p>
                 <button type="button" id="bookingSubmit">Make Booking</button>
 
@@ -56,22 +48,36 @@
         </div>
 
         <div id="map">
-            <img src="/map.jpg">
-            <div id="lodge1">1</div>
-            <div id="lodge2">2</div> 
-            <div id="lodge3">3</div> 
-            <div id="lodge4">4</div> 
-            <div id="lodge5">5</div> 
-            <div id="lodge6">6</div> 
-            <div id="lodge7">7</div>
-            <div id="lodge8">8</div>  
-            <div id="lodge9">9</div> 
-            <div id="lodge10">10</div>  
+            <img src="/map.jpg" id="mapimg">
+            <div id="lodge1" class="icon">1</div>
+            <div id="lodge2" class="icon">2</div> 
+            <div id="lodge3" class="icon">3</div> 
+            <div id="lodge4" class="icon">4</div> 
+            <div id="lodge5" class="icon">5</div> 
+            <div id="lodge6" class="icon">6</div> 
+            <div id="lodge7" class="icon">7</div>
+            <div id="lodge8" class="icon">8</div>  
+            <div id="lodge9" class="icon">9</div> 
+            <div id="lodge10" class="icon">10</div>  
+
+            <div id="lodge1Details" class ="lodgeDetails">1</div>
+            <div id="lodge2Details" class ="lodgeDetails">2</div> 
+            <div id="lodge3Details" class ="lodgeDetails">3</div> 
+            <div id="lodge4Details" class ="lodgeDetails">4</div> 
+            <div id="lodge5Details" class ="lodgeDetails">5</div> 
+            <div id="lodge6Details" class ="lodgeDetails">6</div> 
+            <div id="lodge7Details" class ="lodgeDetails">7</div>
+            <div id="lodge8Details" class ="lodgeDetails">8</div>  
+            <div id="lodge9Details" class ="lodgeDetails">9</div> 
+            <div id="lodge10Details" class ="lodgeDetails">              
+            </div>  
+    </section>
+  
 
         </div>
-    </section>
+        
     
     
-    
+    <script src = "script.js"></script>
 </body>
 </html>

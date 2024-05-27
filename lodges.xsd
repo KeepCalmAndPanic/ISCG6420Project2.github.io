@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="lodges">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>        
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:string"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="lodge">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="lodgeNumber" type="xs:int"></xs:element>
+                            <xs:element name="picture" type="xs:string"></xs:element>
+                            <xs:element name="capacity" type="xs:int"></xs:element>
+                            <xs:element name="cost" type="xs:double"></xs:element>
+                            
+                            <xs:element name="bookedStatus" type="xs:boolean"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>    
