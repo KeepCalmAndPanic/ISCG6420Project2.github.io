@@ -1,0 +1,197 @@
+html {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+section {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    border-radius: 0.5em;
+    margin: 8px 8px 16px 8px;
+    display: block;
+    width: 100%;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+}
+
+span {
+    margin: 0px;
+}
+
+canvas {
+    border: #000 solid 1px;
+}
+
+.speaker {
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+img {
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+#menuBackground {
+    top: 15.3%;
+    height: 720px;
+    width: 960px;
+    position: absolute;
+}
+
+#infoBackground {
+    display: none;
+    top: 15.3%;
+    height: 720px;
+    width: 960px;
+    position: absolute;
+}
+
+#title {
+    scale: 2;
+    left: 42%;
+    top: 32%;
+    height: 154px;
+    width: 350px;
+    position: absolute;
+    animation: titlemove 3s infinite;
+}
+
+#play {
+    scale: 1.5;
+    left: 47%;
+    top: 65%;
+    height: 32px;
+    width: 146px;
+    position: absolute;
+}
+
+#info {
+    scale: 1.5;
+    left: 45%;
+    top: 75%;
+    height: 29px;
+    width: 205px;
+    position: absolute;
+}
+
+#back {
+    display: none;
+    scale: 1.5;
+    left: 47%;
+    top: 85%;
+    height: 32px;
+    width: 146px;
+    position: absolute;
+}
+
+#infotxt {
+    display: none;
+    scale: 0.8;
+    top: 12%;
+    height: 693px;
+    width: 600px;
+    position: absolute;
+}
+
+#charAni {
+    display: none;
+    scale: 0.3;
+    bottom: 15%;
+    right: 10%;
+    height: 864px;
+    width: 864px;
+    position: absolute;
+}
+
+#digAni {
+    display: none;
+    scale: 0.3;
+    top: 19.5%;
+    right: 10%;
+    height: 864px;
+    width: 864px;
+    position: absolute;
+}
+
+#timerDisplay {
+    position: absolute;
+    font-size: 25px;
+    top: 13%;
+    left: 27%;
+}
+
+#scoreDisplay {
+    position: absolute;
+    font-size: 25px;
+    top: 13%;
+    left: 32%;
+}
+
+#gameover {
+    display: none;
+    top: 15.3%;
+    height: 720px;
+    width: 960px;
+    position: absolute;
+}
+
+#timeup {
+    display: none;
+    scale: 2;
+    left: 42%;
+    top: 32%;
+    height: 102px;
+    width: 277px;
+    position: absolute;
+    animation: titlemove 3s infinite;
+}
+
+#replay {
+    display: none;
+    scale: 1.5;
+    left: 47%;
+    top: 65%;
+    height: 32px;
+    width: 146px;
+    position: absolute;
+}
+
+#tomenu {
+    display: none;
+    scale: 1.5;
+    left: 45%;
+    top: 75%;
+    height: 29px;
+    width: 205px;
+    position: absolute;
+}
+
+@keyframes titlemove {
+    0% {rotate: 0deg;}
+    25% {rotate: 10deg;}
+    50% {rotate: -10deg;}
+    75% {rotate: 10deg;}
+    100% {rotate: 0deg;}
+}

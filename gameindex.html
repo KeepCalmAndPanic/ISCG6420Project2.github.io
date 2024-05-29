@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ISCG6420 game</title>
+
+    <link rel="stylesheet" href="./indexStyle.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+        <section class="txt-center">
+            <h2 class="underline">Worm hunt game</h2>
+            <audio id="music" src="./assets/greatMarshDP.mp3" preload="auto"></audio>
+            <audio id="paper" src="./assets/paperSound.mp3" preload="auto"></audio>
+            <div class="speaker">
+                <img src="./assets/speakerOn.png" id="speakerIcon" onClick="togglePlay();speakerChange()">
+            </div>
+            <div id="menu">
+                <p id="timerDisplay">00:10</p>
+                <p id="scoreDisplay">worms: 0</p>
+                <img src="./assets/background.png" id="menuBackground">
+                <img src="./assets/title.png" id="title">
+                <img src="./assets/playbtn.png" id="play" onclick="playbutton(); timer()">
+                <img src="./assets/infobtn.png" id="info" onclick="infobutton()">
+                <img src="./assets/background.png" id="infoBackground">
+                <img src="./assets/backbtn.png" id="back" onclick="infobutton()">
+                <img src="./assets/info.png" id="infotxt">
+                <img src="./assets/charAnimation.gif" id="charAni">
+                <img src="./assets/digAnimation.gif" id="digAni">
+                <img src="./assets/background.png" id="gameover">
+                <img src="./assets/toMenubtn.png" id="tomenu" onclick="hideend(); playbutton()">
+                <img src="./assets/timeUp.png" id="timeup">
+                <img src="./assets/replaybtn.png" id="replay" onclick="hideend(); timer()">
+            </div>
+            <canvas id="gamecanvas" width="960px" height="720px"></canvas>
+        </section>
+
+        <script src="./indexjs.js"></script>
+</body>
+
+</html>
