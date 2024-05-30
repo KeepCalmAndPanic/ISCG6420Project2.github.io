@@ -10,18 +10,30 @@
 </head>
 
 <body>
-    <div id="titleBG">
-        <h1>Resort Park Adventure</h1>
-    </div>
-    <nav id="navBar">
-        <a href="/gameindex.html"> Game </a>
-
-    </nav>
-    <section id="part1">
-        <h1>Book a Lodge</h1>
-
-        <div id="bookingForm">
+    <main>
+        <div id="titleBG" >
+            <h1>Resort Park Adventure</h1>
+        </div>
+        <nav id="navBar">
+            <ul>
+                <li><a href="/index.html">Book Resort Park</a></li>
+                <li><a href="/gameindex.html">Game</a></li>
+                <li><a href="/Index Wireframe.drawio.pdf">Index Wireframe</a></li>
+                <li><a href="/Part 1 Wireframe.drawio.pdf">Booking System Wireframe</a></li>
+                <li><a href="/lodges.xml">Lodges XML</a></li>
+                <li><a href="/lodges.xsd">Lodges XSD</a></li>
+                <li><a href="">Game Wireframe</a></li>
+                <li><a href="">Game Storyboards</a></li>
+           
+            </ul>
             
+
+        </nav>
+        <section id="part1">
+            <h1>Book a Lodge</h1>
+
+            <div id="bookingForm">
+
                 <form id="inputForm">
                     <h3 class="row">Please complete the following to make a Booking.</h3>
                     <label class="row" for="checkIn">Check In
@@ -37,6 +49,15 @@
                     </div>
                     <p class="row" id="totalCost">Total Cost</p>
                     <button type="button" id="bookingSubmit">Make Booking</button>
+                    <ul>
+                        <strong>How to make a lodge booking:</strong> 
+                        <li>Select a Check In and Check Out Date</li>
+                        <li>Enter the number of people staying (up to 8)</li>
+                        <li>Hover over a lodge on the Map to see cost and a picture</li>
+                        <li>Click a lodge to select it</li>
+                        <li>If you are happy with your selections click Make Booking</li>
+                        
+                    </ul>
                 </form>
                 <form id="summaryForm" style="display: none;">
                     <h3 class="row">Booking Summary</h3>
@@ -45,53 +66,50 @@
                     <div class="row" id="summaryPartySize"></div>
                     <div class="row" id="summaryTotalCost"></div>
 
-                    <button type="button" id = "confirmBookingButton">Confirm Booking</button>
-                    <button type="button" id = "returnButton">Return</button>
+                    <button type="button" id="confirmBookingButton">Confirm Booking</button>
+                    <button type="button" id="returnButton">Return</button>
 
                 </form>
-        </div>
-
-        <div id="map">
-            <img src="/map.jpg" id="mapimg">
-            <div id="lodge1" class="icon">1</div>
-            <div id="lodge2" class="icon">2</div>
-            <div id="lodge3" class="icon">3</div>
-            <div id="lodge4" class="icon">4</div>
-            <div id="lodge5" class="icon">5</div>
-            <div id="lodge6" class="icon">6</div>
-            <div id="lodge7" class="icon">7</div>
-            <div id="lodge8" class="icon">8</div>
-            <div id="lodge9" class="icon">9</div>
-            <div id="lodge10" class="icon">10</div>
-
-            <div id="lodge1Details" class="lodgeDetails">1</div>
-            <div id="lodge2Details" class="lodgeDetails">2</div>
-            <div id="lodge3Details" class="lodgeDetails">3</div>
-            <div id="lodge4Details" class="lodgeDetails">4</div>
-            <div id="lodge5Details" class="lodgeDetails">5</div>
-            <div id="lodge6Details" class="lodgeDetails">6</div>
-            <div id="lodge7Details" class="lodgeDetails">7</div>
-            <div id="lodge8Details" class="lodgeDetails">8</div>
-            <div id="lodge9Details" class="lodgeDetails">9</div>
-            <div id="lodge10Details" class="lodgeDetails">
             </div>
 
-        </div>
-        <div id="summaryPicture" style="display: none;">
-            <div id="summaryPictureContainer"></div>
-            <div id="summaryLodgeDetails">
-                <div id="summaryLodgeNumber" class="row"></div>
-                <div id="summaryLodgeCapacity" class="row"></div>
-                <div id="summaryLodgeCost" class="row"></div>
+            <div id="map">
+                <img src="/map.jpg" id="mapimg">
+                <div id="lodge1" class="icon">1</div>
+                <div id="lodge2" class="icon">2</div>
+                <div id="lodge3" class="icon">3</div>
+                <div id="lodge4" class="icon">4</div>
+                <div id="lodge5" class="icon">5</div>
+                <div id="lodge6" class="icon">6</div>
+                <div id="lodge7" class="icon">7</div>
+                <div id="lodge8" class="icon">8</div>
+                <div id="lodge9" class="icon">9</div>
+                <div id="lodge10" class="icon">10</div>
+
+                <div id="lodge1Details" class="lodgeDetails">1</div>
+                <div id="lodge2Details" class="lodgeDetails">2</div>
+                <div id="lodge3Details" class="lodgeDetails">3</div>
+                <div id="lodge4Details" class="lodgeDetails">4</div>
+                <div id="lodge5Details" class="lodgeDetails">5</div>
+                <div id="lodge6Details" class="lodgeDetails">6</div>
+                <div id="lodge7Details" class="lodgeDetails">7</div>
+                <div id="lodge8Details" class="lodgeDetails">8</div>
+                <div id="lodge9Details" class="lodgeDetails">9</div>
+                <div id="lodge10Details" class="lodgeDetails">
+                </div>
+
             </div>
-            
-        </div>
-        </div>
-    </section>
+            <div id="summaryPicture" style="display: none;">
+                <div id="summaryPictureContainer"></div>
+                <div id="summaryLodgeDetails">
+                    <div id="summaryLodgeNumber" class="row"></div>
+                    <div id="summaryLodgeCapacity" class="row"></div>
+                    <div id="summaryLodgeCost" class="row"></div>
+                </div>
 
+            </div>
 
-    </div>
-
+        </section>
+    </main>
 
 
     <script src="script.js"></script>

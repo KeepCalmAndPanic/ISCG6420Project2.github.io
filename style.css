@@ -8,26 +8,76 @@ html {
     box-sizing: inherit;
 }
 
+body{
+    background-color: #f1f1f1;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    max-width: 1500px;
+    min-height: 1200px;
+    background-color: #fff;
+    border-radius: 0.5em
+    
+}
+nav ul{
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px 5px;
+    background-color: black;
+}
+nav li{
+    display: inline;
+    border-right: 1px solid white;
+}
+
+
+nav li:last-child{
+    border-right: none;
+}
+nav li a{
+    color: white;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-decoration: none; 
+}
+nav li a:hover{
+    background-color: black;
+    font-size: 22px;
+}
+
+#titleBG{
+    background-image: url("piha.jpg");
+    background-size: cover;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 0.5em;
+}
+
 
 #titleBG h1{
     text-align: left;
     font-size: 40px;
+    margin: 20px;
 }
 
-#part1{
-    width: 100%;
+#part1 h1{
+    text-align: center;
+    font-size: 30px;
 }
 #bookingForm{
     float: left;
     width: 400px;
     height: 800px;
-    position: relative;
-    margin-left: 10%;
     font-size: 18px;
-    box-shadow: 2px 2px 2px 5px lightgray;
-    
-
+    margin-left: 20px;
 }
+#bookingForm ul{
+    list-style-type: decimal;
+}
+
 #inputForm .row{
     width: 100%;
     float: left;
@@ -60,16 +110,14 @@ html {
 
 
 #map, #summaryPicture{
-    float: left;
+    float: right;
     width: 990px;
     height: 800px;
     position: relative;
-    
-    
+
 }
 #mapimg{
-    object-fit: contain;
-    position: absolute;
+    object-fit: contain;  
     width: 100%;
     height: 100%;
 }
@@ -188,7 +236,7 @@ html {
 }
 #summaryForm{
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 150%;
     
 }

@@ -115,10 +115,12 @@ function submitForm() {
     
     document.getElementById(
         "summaryArrivalDate"
-    ).innerHTML = `Arrival Date: ${checkIn.getDate()}-${checkIn.getMonth()}-${checkIn.getFullYear()}`;
+    ).innerHTML = `Arrival Date: ${checkIn.getDate()}-${checkIn.getMonth()}-
+        ${checkIn.getFullYear()}  ${checkIn.getHours()}:00`;
     document.getElementById(
         "summaryLeaveDate"
-    ).innerHTML = `Departure Date: ${checkOut.getDate()}-${checkOut.getMonth()}-${checkOut.getFullYear()}`;
+    ).innerHTML = `Departure Date: ${checkOut.getDate()}-${checkOut.getMonth()}-
+        ${checkOut.getFullYear()}  ${checkIn.getHours()}:00`;
     document.getElementById(
         "summaryPartySize"
     ).innerHTML = `Party Size: ${numberStaying}`;
