@@ -15,19 +15,36 @@
 
 <body>
     <main>
+        <div id="titleBG">
+            <h1>Resort Park Adventure</h1>
+        </div>
+        <nav id="navBar">
+            <ul>
+                <li><a href="/index.html">Book Resort Park</a></li>
+                <li><a href="/gameindex.html">Game</a></li>
+                <li><a href="/Index Wireframe.drawio.pdf">Index Wireframe</a></li>
+                <li><a href="/Part 1 Wireframe.drawio.pdf">Booking System Wireframe</a></li>
+                <li><a href="/lodges.xml">Lodges XML</a></li>
+                <li><a href="/lodges.xsd">Lodges XSD</a></li>
+                <li><a href="">Game Wireframe</a></li>
+                <li><a href="">Game Storyboards</a></li>
+            </ul>
+        </nav>
         <section class="txt-center">
             <h2 class="underline">Worm hunt game</h2>
-            <audio id="music" src="./assets/greatMarshDP.mp3" preload="auto"></audio>
+            <audio id="music" src="./assets/greatMarshPokemonDP.mp3" preload="auto"></audio>
             <audio id="paper" src="./assets/paperSound.mp3" preload="auto"></audio>
+            <audio id="bing" src="./assets/brawlMenuSound.mp3" preload="auto"></audio>
+            <audio id="thud" src="./assets/pokemonWallBumpSound.mp3" preload="auto"></audio>
             <div class="speaker">
-                <img src="./assets/speakerOn.png" id="speakerIcon" onClick="togglePlay();speakerChange()">
+                <img src="./assets/speakerOff.png" id="speakerIcon" onClick="togglePlay();speakerChange()">
             </div>
             <div id="menu">
-                <p id="timerDisplay">00:10</p>
+                <p id="timerDisplay1"> seconds</p>
                 <p id="scoreDisplay">worms: 0</p>
                 <img src="./assets/background.png" id="menuBackground">
                 <img src="./assets/title.png" id="title">
-                <img src="./assets/playbtn.png" id="play" onclick="playbutton(); timer()">
+                <img src="./assets/playbtn.png" id="play" onclick="playbutton(); timeSelect()">
                 <img src="./assets/infobtn.png" id="info" onclick="infobutton()">
                 <img src="./assets/background.png" id="infoBackground">
                 <img src="./assets/backbtn.png" id="back" onclick="infobutton()">
@@ -37,7 +54,9 @@
                 <img src="./assets/background.png" id="gameover">
                 <img src="./assets/toMenubtn.png" id="tomenu" onclick="hideend(); playbutton()">
                 <img src="./assets/timeUp.png" id="timeup">
-                <img src="./assets/replaybtn.png" id="replay" onclick="hideend(); timer()">
+                <img src="./assets/replaybtn.png" id="replay" onclick="hideend(); timeSelect()">
+                <img src="./assets/1minute.png" id="oneminute" onclick="timer1m();">
+                <img src="./assets/3minute.png" id="threeminute" onclick="timer3m();">
             </div>
             <canvas id="gamecanvas" width="960px" height="720px"></canvas>
         </section>

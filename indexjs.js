@@ -1,6 +1,6 @@
 gameRun();
 
-// playing music when speaker icon clicked
+// playing/stopping music when speaker icon clicked
 const speaker = document.getElementById("speakerIcon");
 var music = document.getElementById("music");
 var isPlaying = false;
@@ -16,24 +16,31 @@ music.onpause = function() {
   isPlaying = false;
 };
 
-// change speaker icon between on and off (NOT WORKING)
-//function speakerChange(){
-    //if (speaker.src === "./assets/speakerOn") {
-        //speaker.src = "./assets/speakerOff";
-    //}
-    //else {
-        //speaker.src = "./assets/speakerOn"
-    //}
-//}
+function speakerChange() {
+    if (document.getElementById("speakerIcon").src == "./assets/speakerOn.png") {
+        document.getElementById("speakerIcon").src = "./assets/speakerOff.png";
+    } else {
+        document.getElementById("speakerIcon").src = "./assets/speakerOn.png";
+    }
+}
 
-function timer(){
+function timer1m(){
     var over = document.getElementById("gameover");
     var timeup = document.getElementById("timeup");
     var replay = document.getElementById("replay");
     var tomenu = document.getElementById("tomenu");
-    var sec = 10;
+    var oneMin = document.getElementById("oneminute");
+    var threeMin = document.getElementById("threeminute");
+    var bing = document.getElementById("bing");
+    bing.play();
+    var sec = 60;
+    if (oneMin.style.display === "none" || threeMin.style.display === "none") {
+        oneMin.style.display = "block", threeMin.style.display = "block";
+      } else {
+        oneMin.style.display = "none", threeMin.style.display = "none";
+      }
     var timer = setInterval(function(){
-        document.getElementById('timerDisplay').innerHTML='00:'+sec;
+        document.getElementById('timerDisplay1').innerHTML=sec+' seconds';
         sec--;
         if (sec < 0) {
             clearInterval(timer);
@@ -46,11 +53,52 @@ function timer(){
     }, 1000);
 }
 
+function timer3m(){
+    var over = document.getElementById("gameover");
+    var timeup = document.getElementById("timeup");
+    var replay = document.getElementById("replay");
+    var tomenu = document.getElementById("tomenu");
+    var oneMin = document.getElementById("oneminute");
+    var threeMin = document.getElementById("threeminute");
+    var bing = document.getElementById("bing");
+    bing.play();
+    var sec = 180;
+    if (oneMin.style.display === "none" || threeMin.style.display === "none") {
+        oneMin.style.display = "block", threeMin.style.display = "block";
+      } else {
+        oneMin.style.display = "none", threeMin.style.display = "none";
+      }
+    var timer = setInterval(function(){
+        document.getElementById('timerDisplay1').innerHTML=sec+' seconds';
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+            if (over.style.display === "block" || timeup.style.display === "block" || replay.style.display === "block" || tomenu.style.display === "block") {
+                over.style.display = "none", timeup.style.display = "none", replay.style.display = "none", tomenu.style.display = "none";
+            } else {
+                over.style.display = "block", timeup.style.display = "block", replay.style.display = "block", tomenu.style.display = "block";
+            }
+        }
+    }, 1000);
+}
+
+function timeSelect() {
+    var oneMin = document.getElementById("oneminute");
+    var threeMin = document.getElementById("threeminute");
+    if (oneMin.style.display === "block" || threeMin.style.display === "block") {
+      oneMin.style.display = "none", threeMin.style.display = "none";
+    } else {
+      oneMin.style.display = "block", threeMin.style.display = "block";
+    }
+  }
+
 function playbutton() {
-    var title = document.getElementById("title")
-    var play = document.getElementById("play")
-    var info = document.getElementById("info")
+    var title = document.getElementById("title");
+    var play = document.getElementById("play");
+    var info = document.getElementById("info");
     var bg = document.getElementById("menuBackground");
+    var bing = document.getElementById("bing");
+    bing.play();
     if (title.style.display === "none" || play.style.display === "none"|| info.style.display === "none"|| bg.style.display === "none") {
         title.style.display = "block", play.style.display = "block", info.style.display = "block", bg.style.display = "block";
     } else {
@@ -77,6 +125,8 @@ function hideend() {
     var timeup = document.getElementById("timeup");
     var replay = document.getElementById("replay");
     var tomenu = document.getElementById("tomenu");
+    var bing = document.getElementById("bing");
+    bing.play();
     if (over.style.display === "none" || timeup.style.display === "none" || replay.style.display === "none" || tomenu.style.display === "none") {
         over.style.display = "block", timeup.style.display = "block", replay.style.display = "block", tomenu.style.display = "block";
     } else {
@@ -150,7 +200,7 @@ function gameRun() {
                     [4320, 540], [1080, 540], [4320, 540], [1620, 540] 
                 ],
                 [ // dig track 
-                    [0, 0], [2160, 0], [4860, 0], [2700, 0]
+                    [0, 0], [2160, 0], [4860, 0]
                 ],
             ],
             0.2 // Sprite scaling factor
@@ -175,28 +225,32 @@ function gameRun() {
         window.requestAnimationFrame(run);
     }
 
-    function checkCharCollision(character) {
+    function checkCharCollision() {
+        var thud = document.getElementById("thud")
         // right wall collision
-        if (position.x + character.scaledWidth >= canvas.clientWidth) {
-            position.x = canvas.clientWidth;
+        if (character.position[0] >= 900) {
+            thud.play();
+            character.position[0] = 900;
         }
         // left wall collision
-        else if (position.x <= 0) {
-            position.x = 0;
+        else if (character.position[0] <= -40) {
+            thud.play();
+            character.position[0] = -40;
         }
 
         // bottom wall collision
-        if (position.y + character.scaledHeight >= canvas.clientHeight) {
-            position.y = canvas.clientHeight;
+        if (character.position[1] >= 640) {
+            thud.play();
+            character.position[1] = 640;
         }
         // top wall collision
-        else if (position.y <= 0) {
-            position.y = 0;
+        else if (character.position[1] <= -20) {
+            thud.play();
+            character.position[1] = -20;
         }
     }
 
     function update() {
-        //checkCharCollision();
         character.update(tick);
     }
 
@@ -205,7 +259,7 @@ function gameRun() {
         ctx.drawImage(backgroundImage, 0, 0, 960, 720);
         character.draw(ctx);
         ctx.beginPath();
-        ctx.rect(5, 5, 235, 40)
+        ctx.rect(5, 5, 340, 40)
         ctx.lineWidth=10;
         ctx.stroke();
         ctx.fillStyle='rgb(255,255,255)';
@@ -317,10 +371,17 @@ function gameRun() {
                     // update frame to next frame on the track. 
                     // Modulo wraps the frames from last frame to first.
                     if (this.direction[0] !== 0 || this.direction[1] !== 0) {
+                        this.frameTime = 125;
                         this.animationFrame = (this.animationFrame + 1) % this.spriteFrames[this.animationTrack].length;
                     }
-                    else if (this.action === "dig") {
-                        this.animationFrame = (this.animationFrame + 1) % this.spriteFrames[this.animationTrack].length;
+                    else if (this.lastAction === "dig") {
+                        var counter = 0
+                        while (counter < 5) {
+                            this.frameTime = 200;
+                            this.animationFrame = (this.animationFrame + 1) % this.spriteFrames[this.animationTrack].length;
+                            counter += 1;
+                        }
+                        this.lastAction = "";
                     }
                 }
 
@@ -328,6 +389,8 @@ function gameRun() {
                 // it has been since the last position update.
                 this.position[0] += this.direction[0] * tick;
                 this.position[1] += this.direction[1] * tick;
+
+                checkCharCollision();
             },
 
             // Draw character elements using the passed context (canvas).
@@ -378,296 +441,3 @@ function gameRun() {
         };
     }
 };
-
-function wormLogic() {
-    let canvas = document.getElementById("gamecanvas");
-    let context = canvas.getContext('2d');
-
-    let squaresize = 100;
-    let squares = new Array();
-
-    window.requestAnimationFrame(gameLoop);
-
-    function update(secondsPassed) {
-        checkCollisions();
-        for (var i = 0; i < squares.length; i++) {
-            (squares[i]).update(secondsPassed);
-        }
-    }
-
-    function draw() {
-        context.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-
-        for (var i = 0; i < squares.length; i++) {
-            squares[i].draw(context);
-        }
-
-        for (var i = 0; i < circles.length; i++) {
-            circles[i].draw(context);
-        }
-    }
-
-    function doMouseDown(event) {
-        console.log(this);
-        switch (event.button) {
-            case 0:
-                squares.push(
-                    new Square(
-                        null,
-                        getX(event),
-                        getY(event),
-                        getRandomInRange(-50, 50),
-                        getRandomInRange(-50, 50),
-                        squaresize,
-                        squaresize
-                    )
-                )
-                console.log(squares);
-                break;
-
-            default:
-                circles.push(
-                    new Circle(
-                        null,
-                        getX(event),
-                        getY(event),
-                        getRandomInRange(-50, 50),
-                        getRandomInRange(-50, 50),
-                        squaresize / 2
-                    )
-                )
-                break;
-        }
-    }
-
-    function checkCollisions() {
-        for (var i = 0; i < squares.length; i++) {
-            // for each square, check the wall overlaps
-            checkWallCollisions(squares[i]);
-            // for each square, check for overlaps with other squares
-            checkObjectCollisions(squares[i], i);
-        }
-
-        // for (var i = 0; i < circles.length; i++) {
-        //     // for each square, check the wall overlaps
-        //     checkWallCollisions(circles[i]);
-        //     // for each square, check for overlaps with other squares
-        //     checkObjectCollisions(circles[i], i);
-        // }
-
-    }
-
-    function checkWallCollisions(object) {
-        
-        
-        // check right and left wall overlap
-        if (object.getRight() >= canvas.clientWidth) {
-            object.vx = -object.vx;
-            object.x = canvas.clientWidth - object.width - 1;
-        }
-        else if (object.x <= 0) {
-            object.vx = -object.vx;
-            object.x = 1;
-        }
-
-        // check bottom and top wall overlap
-        if (object.getBottom() >= canvas.clientHeight) {
-            object.vy = -object.vy;
-            object.y = canvas.clientHeight - object.height - 1;;
-        }
-        else if (object.y <= 0) {
-            object.vy = -object.vy;
-            object.y = 1;
-        }
-    }
-
-    function checkObjectCollisions(object, index) {
-        // check parameter square against all other squares
-        for (let i = 0; i < squares.length; i++) {
-            if (object !== squares[i]) {
-                let isCol = rectIntersect(
-                    object.x,
-                    object.y,
-                    object.width,
-                    object.height,
-                    squares[i].x,
-                    squares[i].y,
-                    squares[i].width,
-                    squares[i].height
-                );
-                object.isColliding = isCol;
-                if (isCol) {
-                    (squares[i]).isColliding = isCol;
-                    break;
-                }
-            }
-        }
-
-        // check parameter square against all other squares
-        for (let i = 0; i < circles.length; i++) {
-            if (object !== circles[i]) {
-                let isCol = circleIntersect(
-                    object.x,
-                    object.y,
-                    object.width,
-                    squares[i].x,
-                    squares[i].y,
-                    squares[i].width
-                );
-                object.isColliding = isCol;
-                if (isCol) {
-                    (squares[i]).isColliding = isCol;
-                    break;
-                }
-            }
-        }
-    }
-
-    function rectIntersect(x1, y1, w1, h1, x2, y2, w2, h2) {
-        // Check x and y for overlap
-        if (x2 > w1 + x1 || x1 > w2 + x2 || y2 > h1 + y1 || y1 > h2 + y2) {
-            return false;
-        }
-        return true;
-    }
-
-    function circleIntersect(x1, y1, r1, x2, y2, r2) {
-        const distanceX = x1 - x2;
-        const distanceY = y1 - y2;
-        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-
-        if (distance < r1 + r2) {
-            return true;
-        }
-        return false;
-    }
-
-    function getX(event) {
-        var rect = canvas.getBoundingClientRect();
-        return event.clientX - rect.left;
-    }
-
-    function getY(event) {
-        var rect = canvas.getBoundingClientRect();
-        return event.clientY - rect.top;
-    }
-
-    function getRandomInRange(min, max) {
-        return Math.random() * (Math.abs(min) + max) + min;
-    }
-}
-
-class GameObject
-{
-    constructor (context, x, y, vx, vy, width, height){
-        this.context = context;
-        this.x = x;
-        this.y = y;
-        this.vx = vx;
-        this.vy = vy;
-        this.width = width;
-        this.height = height;
-
-        this.isColliding = false;
-
-        this.draw = this.draw.bind(this);
-        this.update = this.update.bind(this);
-        this.getRight = this.getRight.bind(this);
-        this.getBottom = this.getBottom.bind(this);
-        this.setVelocity = this.setVelocity.bind(this);
-        this.offsetVelocity = this.offsetVelocity.bind(this);
-    }
-    getRight(){
-        return (this.x + this.width);
-    }
-
-    getBottom(){
-        return (this.y + this.height);
-    }
-
-    draw(context){};
-    update(secondsPassed){};
-}
-
-class Square extends GameObject
-{
-    constructor (context, x, y, vx, vy, width, height){
-        super(context, x, y, vx, vy);
-
-        // Set default width and height
-        this.width = width;
-        this.height = height;
-
-        this.draw = this.draw.bind(this);
-        this.update = this.update.bind(this);
-        this.setVelocity = this.setVelocity.bind(this);
-        this.offsetVelocity = this.offsetVelocity.bind(this);
-    }
-
-    draw(ctx){
-        super.draw(ctx);
-        // Draw a simple square
-        ctx.fillStyle = this.isColliding?'#ff8080':'#0099b0';
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-
-    update(secondsPassed){
-        super.update(secondsPassed);
-        // Move with set velocity
-        this.x += this.vx * secondsPassed;
-        this.y += this.vy * secondsPassed;
-        //console.log(this.x + ", " + this.y);
-    }
-
-    setVelocity(vx, vy){
-        this.vx = vx;
-        this.vy = vy;
-    }
-
-    offsetVelocity(vx, vy){
-        this.vx += vx;
-        this.vy += vy;
-    }
-}
-
-class Circle extends GameObject
-{
-    constructor (context, x, y, vx, vy, radius){
-        super(context, x, y, vx, vy);
-
-        // Set default width and height
-        this.radius = radius
-
-        this.draw = this.draw.bind(this);
-        this.update = this.update.bind(this);
-        this.setVelocity = this.setVelocity.bind(this);
-        this.offsetVelocity = this.offsetVelocity.bind(this);
-    }
-
-    draw(ctx){
-        super.draw(ctx);
-        // Draw a simple circle
-        ctx.fillStyle = this.isColliding?'#ff8080':'#0099b0';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-        ctx.fill();
-    }
-
-    update(secondsPassed){
-        super.update(secondsPassed);
-        // Move with set velocity
-        this.x += this.vx * secondsPassed;
-        this.y += this.vy * secondsPassed;
-        //console.log(this.x + ", " + this.y);
-    }
-
-    setVelocity(vx, vy){
-        this.vx = vx;
-        this.vy = vy;
-    }
-
-    offsetVelocity(vx, vy){
-        this.vx += vx;
-        this.vy += vy;
-    }
-}

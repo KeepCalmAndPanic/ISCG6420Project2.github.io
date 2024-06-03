@@ -19,7 +19,8 @@ section {
     border-radius: 0.5em;
     margin: 8px 8px 16px 8px;
     display: block;
-    width: 100%;
+    max-width: 1500px;
+    min-height: 720px;
 }
 
 
@@ -30,7 +31,11 @@ h2 {
 main {
     margin-left: auto;
     margin-right: auto;
-    max-width: 960px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    max-width: 1500px;
+    min-height: 720px;
+    background-color: #fff;
+    border-radius: 0.5em;
 }
 
 span {
@@ -38,7 +43,10 @@ span {
 }
 
 canvas {
-    border: #000 solid 1px;
+    border: #000 solid 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .speaker {
@@ -54,24 +62,27 @@ img {
 }
 
 #menuBackground {
-    top: 15.3%;
     height: 720px;
     width: 960px;
     position: absolute;
+    left: 26.3%;
+    top: 30.3%;
+    display: block;
 }
 
 #infoBackground {
-    display: none;
-    top: 15.3%;
     height: 720px;
     width: 960px;
     position: absolute;
+    left: 26.3%;
+    top: 30.3%;
+    display: none;
 }
 
 #title {
-    scale: 2;
-    left: 42%;
-    top: 32%;
+    scale: 1.5;
+    left: 40%;
+    top: 45%;
     height: 154px;
     width: 350px;
     position: absolute;
@@ -80,8 +91,8 @@ img {
 
 #play {
     scale: 1.5;
-    left: 47%;
-    top: 65%;
+    left: 45%;
+    top: 70%;
     height: 32px;
     width: 146px;
     position: absolute;
@@ -89,8 +100,8 @@ img {
 
 #info {
     scale: 1.5;
-    left: 45%;
-    top: 75%;
+    left: 43%;
+    top: 80%;
     height: 29px;
     width: 205px;
     position: absolute;
@@ -99,8 +110,8 @@ img {
 #back {
     display: none;
     scale: 1.5;
-    left: 47%;
-    top: 85%;
+    left: 45%;
+    top: 91%;
     height: 32px;
     width: 146px;
     position: absolute;
@@ -109,7 +120,8 @@ img {
 #infotxt {
     display: none;
     scale: 0.8;
-    top: 12%;
+    top: 25%;
+    left: 25%;
     height: 693px;
     width: 600px;
     position: absolute;
@@ -118,8 +130,8 @@ img {
 #charAni {
     display: none;
     scale: 0.3;
-    bottom: 15%;
-    right: 10%;
+    bottom: 12%;
+    right: 20%;
     height: 864px;
     width: 864px;
     position: absolute;
@@ -128,40 +140,41 @@ img {
 #digAni {
     display: none;
     scale: 0.3;
-    top: 19.5%;
-    right: 10%;
+    top: 29%;
+    right: 20%;
     height: 864px;
     width: 864px;
     position: absolute;
 }
 
-#timerDisplay {
+#timerDisplay1 {
     position: absolute;
     font-size: 25px;
-    top: 13%;
+    top: 28.5%;
     left: 27%;
 }
 
 #scoreDisplay {
     position: absolute;
     font-size: 25px;
-    top: 13%;
-    left: 32%;
+    top: 28.5%;
+    left: 36%;
 }
 
 #gameover {
-    display: none;
-    top: 15.3%;
     height: 720px;
     width: 960px;
     position: absolute;
+    left: 26.3%;
+    top: 30.3%;
+    display: none;
 }
 
 #timeup {
     display: none;
-    scale: 2;
+    scale: 1.5;
     left: 42%;
-    top: 32%;
+    top: 45%;
     height: 102px;
     width: 277px;
     position: absolute;
@@ -171,8 +184,8 @@ img {
 #replay {
     display: none;
     scale: 1.5;
-    left: 47%;
-    top: 65%;
+    left: 45%;
+    top: 75%;
     height: 32px;
     width: 146px;
     position: absolute;
@@ -181,11 +194,64 @@ img {
 #tomenu {
     display: none;
     scale: 1.5;
-    left: 45%;
-    top: 75%;
+    left: 43%;
+    top: 85%;
     height: 29px;
     width: 205px;
     position: absolute;
+}
+
+#oneminute {
+    display: none;
+    scale: 1.5;
+    left: 39%;
+    top: 60%;
+    height: 32px;
+    width: 146px;
+    position: absolute;
+}
+
+#threeminute {
+    display: none;
+    scale: 1.5;
+    left: 51%;
+    top: 60%;
+    height: 32px;
+    width: 146px;
+    position: absolute;
+}
+
+#titleBG {
+    background-image: url("./assets/piha.jpg");
+    background-size: cover;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 0.5em;
+}
+
+#titleBG h1 {
+    text-align: left;
+    font-size: 40px;
+    margin: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px 5px;
+    background-color: black;
+}
+
+nav li {
+    display: inline;
+    border-right: 1px solid white;
+}
+
+nav li a {
+    color: white;
+    padding: 10px 10px;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 @keyframes titlemove {
